@@ -1,10 +1,30 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet: # id of input
-    description: 'Who to greet'
+  server_repo: # id of input
+    description: 'server repo name eg. myorg/server'
     required: true
-    default: 'World'
+    default: ''
+  react_repo: # id of input
+    description: 'react repo name eg. myorg/react-repo'
+    required: true
+    default: ''
+  heroku_key: # id of input
+    description: 'heroku api key(can found it you heroku account setting)'
+    required: true
+    default: ''
+  heroku_app_name: # id of input
+    description: 'heroku app name eg. todo-app'
+    required: true
+    default: ''
+  github_user_email: # id of input
+    description: 'github email eg. abc@xyz.com'
+    required: true
+    default: ''
+  github_user_name: # id of input
+    description: 'github user name'
+    required: true
+    default: ''
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -12,4 +32,9 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.server_repo }}
+    - ${{ inputs.react_repo }}
+    - ${{ inputs.heroku_key }}
+    - ${{ inputs.heroku_app_name }}
+    - ${{ inputs.github_user_email }}
+    - ${{ inputs.github_user_name }}

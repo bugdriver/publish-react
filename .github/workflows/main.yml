@@ -7,9 +7,14 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: actions/hello-world-docker-action@v1
+        uses: actions/public-react@v1
         with:
-          who-to-greet: 'Mona the Octocat'
+          server_repo: 'bugdriver/github-backend'
+          react_repo: 'bugdriver/github-ci'
+          heroku_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          github_user_email: 'rajat4113@gmail.com'
+          github_user_name: 'Rajat'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"

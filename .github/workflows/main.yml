@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: bugdriver/publish-react@v1
+        uses: bugdriver/publish-react@v2
         with:
           server_repo: 'bugdriver/github-backend'
           react_repo: 'bugdriver/github-ci'

@@ -11,12 +11,14 @@ exports HEROKU_API_KEY=$HEROKU_API_KEY
 git clone https://github.com/${SERVER_REPO}.git
 
 cd $SERVER_REPO
-
+echo $SERVER_REPO
+echo $REACT_REPO
+echo $SERVER_REPO
 npm install
 npm test
 cd ..
 git clone https://github.com/${REACT_REPO}.git
-
+pwd
 cd $REACT_REPO
 npm install
 npm run-script build
